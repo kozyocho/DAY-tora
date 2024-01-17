@@ -1,0 +1,245 @@
+@use "breakpoints";
+@use "var";
+
+body {
+  //background: linear-gradient(180deg, #eaf4f7 0%, #fff 100%);
+}
+
+.header {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 15px;
+
+    @include breakpoints.mq(pc) {
+      align-items: center;
+      padding-right: 40px;
+      padding-left: 40px;
+      max-width: calc(1200px + 40px * 2);
+      margin: 0 auto;
+    }
+  }
+
+  &__logo {
+    img {
+      width: 160px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include breakpoints.mq(pc) {
+      display: flex;
+      gap: 44px;
+      align-items: center;
+    }
+  }
+
+  &__link-logo {
+  }
+
+  &__link {
+    color: #333;
+    font-family: Noto Sans JP;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 170%; /* 27.2px */
+  }
+
+  &__register {
+    display: none;
+
+    @include breakpoints.mq(pc) {
+      display: inline-block;
+      color: #f6f7f7;
+      text-align: center;
+      font-family: Noto Sans JP;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 170%; /* 27.2px */
+      letter-spacing: 3px;
+      padding: 9px 54px;
+      border-radius: 48px;
+      background: linear-gradient(90deg, #2188de 1.75%, #2bcbc6 97.75%);
+      box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
+    }
+  }
+
+  &__open {
+    @include breakpoints.mq(pc) {
+      display: none;
+    }
+  }
+
+  .drawer-icon {
+    width: 40px;
+    height: 20px;
+
+    &__bar {
+    }
+  }
+}
+
+.blog {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 428px;
+
+  @include breakpoints.mq(pc) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-width: 1280px;
+  }
+
+  @include breakpoints.mq(tb) {
+    max-width: 834px;
+  }
+
+  &__inner {
+    padding-right: 30px;
+    padding-left: 30px;
+
+    @include breakpoints.mq(pc) {
+      padding-right: 80px;
+      padding-left: 80px;
+    }
+
+    @include breakpoints.mq(tb) {
+      padding-right: 47px;
+      padding-left: 47px;
+    }
+  }
+
+  &__titles {
+    @include breakpoints.mq(pc) {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+  }
+
+  &__main-title {
+    color: #228ddd;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 170%; /* 61.2px */
+    letter-spacing: 3.6px;
+  }
+
+  &__sub-title {
+    color: #228bde;
+    font-family: Noto Sans JP;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%; /* 23.8px */
+    letter-spacing: 2.66px;
+  }
+
+  &__items {
+    margin-top: 46px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 52px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px 20px;
+    }
+
+    @include breakpoints.mq(tb) {
+      margin-top: 60px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 34px 20px;
+    }
+  }
+
+  &__item {
+    padding-top: 12px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 16px;
+    position: relative;
+    border-radius: 4px;
+    background: var(--rgb-255255255, #fff);
+    box-shadow: 5px 7px 34px 0px #f1f1f1;
+    img {
+      width: 330px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    color: var(--rgb-255255255, #fff);
+    text-align: center;
+    font-family: Noto Sans JP;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: #2392db;
+    padding: 3px 32px;
+  }
+
+  &__contents-title {
+    margin-top: 6px;
+    color: #333;
+    font-family: Noto Sans JP;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 170%; /* 25.5px */
+  }
+
+  &__contents {
+    margin-top: 4px;
+    color: #333;
+    font-family: Noto Sans JP;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%; /* 22.1px */
+  }
+
+  &__more {
+    text-align: center;
+    margin-top: 46px;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 60px;
+    }
+
+    @include breakpoints.mq(tb) {
+      margin-top: 60px;
+    }
+
+    a {
+      color: #f6f7f7;
+      text-align: center;
+      font-family: Noto Sans JP;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 170%; /* 27.2px */
+      letter-spacing: 3px;
+      display: inline-block;
+      padding: 9px 54px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 48px;
+      background: linear-gradient(90deg, #2188de 1.75%, #2bcbc6 97.75%);
+      box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
+    }
+  }
+}
