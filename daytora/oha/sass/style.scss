@@ -277,38 +277,162 @@ body {
 }
 
 .news {
-  max-width: calc(100% - 15px * 2);
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0px 9px 30px 0px #f4f4f4;
-  margin: 60px auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include breakpoints.mq(pc) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
   &__inner {
+    padding-right: 15px;
+    padding-left: 15px;
+    @include breakpoints.mq(pc) {
+      padding-right: 30px;
+      padding-left: 30px;
+      max-width: calc(variable.$width-inner + 30px * 2);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__card {
     padding: 40px 12px;
-    text-align: center;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0px 9px 30px 0px #f4f4f4;
+
+    @include breakpoints.mq(pc) {
+      border-radius: 30px;
+      padding-top: 40px;
+      padding-bottom: 34px;
+      padding-right: calc(105px / 1140px * 100%);
+      padding-left: calc(105px / 1140px * 100%);
+    }
   }
 
   &__heading {
+    font-family: variable.$font-family-en;
     color: variable.$color-base;
     font-size: 38px;
-    font-style: normal;
     font-weight: 700;
-    line-height: 100%; /* 38px */
+    line-height: 1;
     letter-spacing: 3.8px;
+    text-align: center;
+
+    @include breakpoints.mq(pc) {
+      font-size: 50px;
+      letter-spacing: 5px;
+      text-align: left;
+    }
   }
 
-  &__items {
+  &__lists {
+    margin-top: 28px;
+    @include breakpoints.mq(pc) {
+      margin-top: 29px;
+    }
+
+    > * + * {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 0;
+        left: 0;
+        background: #e3e3e3;
+      }
+    }
   }
 
-  &__item {
+  &__list {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
-  &__date {
+  &__more {
+    margin-top: 18px;
+    text-align: right;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 15px;
+    }
+    a {
+      font-weight: 700;
+      line-height: 1;
+      display: inline-block;
+      border-bottom: 2px solid #111;
+      padding-bottom: calc(10px - 2px);
+    }
   }
 
-  &__label {
-  }
+  .news-link {
+    display: flex;
+    flex-direction: column; //flexを指定した場合、デフォルトは横並びだがdirectionを指定して縦並びにできる
+    gap: 8px;
+    padding-top: 9px;
+    padding-bottom: 10px;
 
-  &__title {
+    @include breakpoints.mq(pc) {
+      flex-direction: row;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      gap: 0;
+    }
+
+    &__meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      @include breakpoints.mq(pc) {
+        gap: 14px;
+        width: 247px;
+        flex-shrink: 0;
+      }
+    }
+
+    &__date {
+      color: #333;
+      font-weight: 400;
+      white-space: nowrap;
+
+      @include breakpoints.mq(pc) {
+        min-width: 119px;
+      }
+    }
+
+    &__label {
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 2px;
+      padding: 2px 10px;
+      background: #e4780c;
+      min-width: 63px;
+      text-align: center;
+
+      &.is-news {
+        background: #e4780c;
+      }
+
+      &.is-column {
+        background: #ecb815;
+      }
+
+      &.is-event {
+        background: #389b47;
+      }
+    }
+
+    &__title {
+      // white-space: nowrap;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+    }
   }
 }
