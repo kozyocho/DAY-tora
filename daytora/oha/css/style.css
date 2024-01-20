@@ -6,6 +6,18 @@ body {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+@media screen and (max-width: 767px) {
+  .hidden-sp {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hidden-pc {
+    display: none;
+  }
+}
+
 .header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -428,4 +440,117 @@ body {
 }
 .news .news-link__label.is-event {
   background: #389b47;
+}
+.about {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .about {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+}
+.about__inner {
+  text-align: center;
+}
+.about__heading-logo {
+  text-align: center;
+}
+.about__heading-logo img {
+  width: 180px;
+}
+@media screen and (min-width: 768px) {
+  .about__heading-logo img {
+    width: 230px;
+  }
+}
+.about__contents {
+  margin-top: 150px;
+  padding-top: 288px;
+  padding-bottom: 105px;
+  position: relative;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .about__contents {
+    margin-top: 176px;
+    padding-top: 284px;
+    padding-bottom: 100px;
+  }
+}
+.about__contents::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1100px;
+  height: 1100px;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#F8B819), to(#F0D320));
+  background: linear-gradient(180deg, #F8B819 0%, #F0D320 100%);
+  z-index: -1;
+}
+@media screen and (min-width: 768px) {
+  .about__contents::before {
+    width: 800px;
+    height: 800px;
+  }
+}
+.about__img {
+  position: absolute;
+  top: -110px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .about__img {
+    top: -126px;
+  }
+}
+.about__img img {
+  width: 320px;
+}
+@media screen and (min-width: 768px) {
+  .about__img img {
+    width: 330px;
+  }
+}
+.about__description {
+  font-weight: 700;
+  line-height: 2.3;
+}
+.about__more-text {
+  margin-top: 43px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1.28px;
+}
+@media screen and (min-width: 768px) {
+  .about__more-text {
+    margin-top: 43px;
+  }
+}
+.about__more-button {
+  margin-top: 12px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .about__more-button {
+    margin-top: 15px;
+  }
+}
+.about__more-button button {
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  border: 2px solid #111;
+  border-radius: 60px;
+  padding: 8px 28px;
+  display: inline-block;
+  background: #fff;
 }

@@ -9,6 +9,18 @@ body {
   font-family: variable.$font-family-ja;
 }
 
+.hidden-sp {
+  @include breakpoints.mq(sp) {
+    display: none;
+  }
+}
+
+.hidden-pc {
+  @include breakpoints.mq(pc) {
+    display: none;
+  }
+}
+
 .header {
   &__inner {
     display: flex;
@@ -433,6 +445,120 @@ body {
       // white-space: nowrap;
       // overflow: hidden;
       // text-overflow: ellipsis;
+    }
+  }
+}
+
+.about {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden;
+
+  @include breakpoints.mq(pc) {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__heading-logo {
+    text-align: center;
+
+    img {
+      width: 180px;
+
+      @include breakpoints.mq(pc) {
+        width: 230px;
+      }
+    }
+  }
+
+  &__contents {
+    margin-top: 150px;
+    padding-top: 288px;
+    padding-bottom: 105px;
+    position: relative;
+    text-align: center;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 176px;
+      padding-top: 284px;
+      padding-bottom: 100px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1100px;
+      height: 1100px;
+      border-radius: 50%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: variable.$color-gradation;
+      z-index: -1;
+
+      @include breakpoints.mq(pc) {
+        width: 800px;
+        height: 800px;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: -110px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    @include breakpoints.mq(pc) {
+      top: -126px;
+    }
+
+    img {
+      width: 320px;
+
+      @include breakpoints.mq(pc) {
+        width: 330px;
+      }
+    }
+  }
+
+  &__description {
+    font-weight: 700;
+    line-height: 2.3;
+  }
+
+  &__more-text {
+    margin-top: 43px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1.28px;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 43px;
+    }
+  }
+
+  &__more-button {
+    margin-top: 12px;
+    text-align: center;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 15px;
+    }
+    button {
+      font-weight: 700;
+      letter-spacing: 0.48px;
+      border: 2px solid variable.$color-base;
+      border-radius: 60px;
+      padding: calc(10px - 2px) calc(30px - 2px);
+      display: inline-block;
+      background: #fff;
     }
   }
 }
