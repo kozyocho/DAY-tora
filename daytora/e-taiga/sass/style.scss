@@ -3,6 +3,13 @@
 
 body {
   //background: linear-gradient(180deg, #eaf4f7 0%, #fff 100%);
+  color: #333;
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  background: #fff;
+  line-height: 1.7;
 }
 
 .header {
@@ -83,6 +90,67 @@ body {
   }
 }
 
+.inner {
+}
+
+.heading {
+  margin-left: 15px;
+
+  @include breakpoints.mq(pc) {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    margin-left: 0;
+  }
+}
+
+.heading__main {
+  color: #228ddd;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 170%; /* 61.2px */
+  letter-spacing: 3.6px;
+}
+
+.heading__sub {
+  color: #228bde;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 170%; /* 23.8px */
+  letter-spacing: 2.66px;
+}
+
+.button {
+  text-align: center;
+  margin-top: 46px;
+
+  @include breakpoints.mq(pc) {
+    margin-top: 60px;
+  }
+
+  @include breakpoints.mq(tb) {
+    margin-top: 60px;
+  }
+
+  a {
+    color: #f6f7f7;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 170%; /* 27.2px */
+    letter-spacing: 3px;
+    display: inline-block;
+    padding: 9px 54px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 48px;
+    background: linear-gradient(90deg, #2188de 1.75%, #2bcbc6 97.75%);
+    box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
+  }
+}
+
 .blog {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -115,34 +183,6 @@ body {
     }
   }
 
-  &__titles {
-    @include breakpoints.mq(pc) {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-  }
-
-  &__main-title {
-    color: #228ddd;
-    font-family: Montserrat;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 170%; /* 61.2px */
-    letter-spacing: 3.6px;
-  }
-
-  &__sub-title {
-    color: #228bde;
-    font-family: Noto Sans JP;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 170%; /* 23.8px */
-    letter-spacing: 2.66px;
-  }
-
   &__items {
     margin-top: 46px;
     display: grid;
@@ -169,7 +209,6 @@ body {
     padding-bottom: 16px;
     position: relative;
     border-radius: 4px;
-    background: var(--rgb-255255255, #fff);
     box-shadow: 5px 7px 34px 0px #f1f1f1;
     img {
       width: 330px;
@@ -180,11 +219,9 @@ body {
     position: absolute;
     top: 12px;
     right: 15px;
-    color: var(--rgb-255255255, #fff);
+    color: #fff;
     text-align: center;
-    font-family: Noto Sans JP;
     font-size: 12px;
-    font-style: normal;
     font-weight: 700;
     line-height: normal;
     background: #2392db;
@@ -193,54 +230,46 @@ body {
 
   &__contents-title {
     margin-top: 6px;
-    color: #333;
-    font-family: Noto Sans JP;
     font-size: 15px;
-    font-style: normal;
     font-weight: 700;
     line-height: 170%; /* 25.5px */
   }
 
   &__contents {
     margin-top: 4px;
-    color: #333;
-    font-family: Noto Sans JP;
     font-size: 13px;
-    font-style: normal;
     font-weight: 400;
     line-height: 170%; /* 22.1px */
   }
 
   &__more {
-    text-align: center;
-    margin-top: 46px;
+    // text-align: center;
+    // margin-top: 46px;
 
-    @include breakpoints.mq(pc) {
-      margin-top: 60px;
-    }
+    // @include breakpoints.mq(pc) {
+    //   margin-top: 60px;
+    // }
 
-    @include breakpoints.mq(tb) {
-      margin-top: 60px;
-    }
+    // @include breakpoints.mq(tb) {
+    //   margin-top: 60px;
+    // }
 
-    a {
-      color: #f6f7f7;
-      text-align: center;
-      font-family: Noto Sans JP;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 170%; /* 27.2px */
-      letter-spacing: 3px;
-      display: inline-block;
-      padding: 9px 54px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border-radius: 48px;
-      background: linear-gradient(90deg, #2188de 1.75%, #2bcbc6 97.75%);
-      box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
-    }
+    // a {
+    //   // color: #f6f7f7;
+    //   // text-align: center;
+    //   // font-size: 16px;
+    //   // font-weight: 700;
+    //   // line-height: 170%; /* 27.2px */
+    //   // letter-spacing: 3px;
+    //   // display: inline-block;
+    //   // padding: 9px 54px;
+    //   // justify-content: center;
+    //   // align-items: center;
+    //   // gap: 10px;
+    //   // border-radius: 48px;
+    //   // background: linear-gradient(90deg, #2188de 1.75%, #2bcbc6 97.75%);
+    //   // box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
+    // }
   }
 }
 
@@ -269,7 +298,6 @@ body {
     text-align: center;
     font-family: Montserrat;
     font-size: 30px;
-    font-style: normal;
     font-weight: 700;
     line-height: 170%; /* 51px */
     letter-spacing: 3px;
@@ -331,9 +359,7 @@ body {
 
   &__time {
     color: #333;
-    font-family: "Noto Sans JP";
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
     line-height: 170%; /* 23.8px */
 
@@ -343,10 +369,7 @@ body {
   }
 
   &__title {
-    color: #111;
-    font-family: "Noto Sans JP";
     font-size: 15px;
-    font-style: normal;
     font-weight: 400;
     line-height: 170%; /* 25.5px */
   }
@@ -381,8 +404,6 @@ body {
 
     a {
       color: #2392db;
-      font-family: "Noto Sans JP";
-      font-size: 16px;
       font-weight: 700;
       line-height: 170%; /* 27.2px */
       letter-spacing: 3px;
@@ -464,9 +485,7 @@ body {
 
   &__heading {
     color: #228ddd;
-    font-family: "Noto Sans JP";
     font-size: 24px;
-    font-style: normal;
     font-weight: 700;
     line-height: 170%; /* 40.8px */
     text-align: left;
@@ -475,35 +494,378 @@ body {
   &__description {
     margin-top: 30px;
     color: #333;
-    font-family: "Noto Sans JP";
     font-size: 15px;
-    font-style: normal;
     font-weight: 400;
     line-height: 200%; /* 30px */
   }
 
   &__button {
     margin-top: 30px;
-    text-align: center;
 
     @include breakpoints.mq(pc) {
       margin-top: 36px;
       text-align: left;
     }
-    button {
+  }
+}
+
+.seminar {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include breakpoints.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__inner {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include breakpoints.mq(pc) {
+      padding-right: 100px;
+      padding-left: 100px;
+    }
+  }
+
+  &__boxes {
+    margin-top: 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 38px;
+      max-width: 1080px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__box {
+    border-radius: 6px;
+    border: 0px solid #707070;
+    background: #fff;
+    box-shadow: 5px 7px 34px 0px #f1f1f1;
+    padding: 24px 12px calc(30px - 2px);
+
+    @include breakpoints.mq(pc) {
+      padding: 24px 24px calc(24px - 2px);
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    text-align: center;
+    @include breakpoints.mq(pc) {
+      width: calc(324 / (1080 - 24 * 2) * 100%);
+    }
+    img {
+      width: 324px;
+    }
+  }
+
+  &__body {
+    margin-top: 22px;
+
+    @include breakpoints.mq(pc) {
+      width: calc(678 / (1080 - 24 * 2) * 100%);
+      margin-top: 2;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__label {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 6px 12px 5px;
+    border-radius: 2px;
+    background: #2392db;
+    display: inline-block;
+  }
+
+  &__time {
+    color: #333;
+    text-align: right;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__lead {
+    margin-top: 14px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__text {
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 170%; /* 23.8px */
+  }
+
+  &__detail {
+    margin-top: 22px;
+    text-align: right;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 20px;
+    }
+    a {
+      color: #2392db;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 170%; /* 23.8px */
+      padding: 8px 44px;
+      border-radius: 2px;
+      border: 1px solid #2392db;
       display: inline-block;
-      padding: 9px 54px;
-      border-radius: 48px;
-      background: linear-gradient(90deg, #2188de 1.75%, #2bcbc6 97.75%);
-      box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
-      color: #f6f7f7;
-      text-align: center;
-      font-family: "Noto Sans JP";
-      font-size: 16px;
-      font-style: normal;
+    }
+  }
+}
+
+.price {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #f4fbff;
+
+  @include breakpoints.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__inner {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include breakpoints.mq(pc) {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+
+  &__boxes {
+    margin-top: 46px;
+    margin-right: calc(64px - 30px);
+    margin-left: calc(64px - 30px);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 40px;
+      flex-direction: row;
+      gap: 30px;
+      justify-content: center;
+      max-width: calc(900px + 30px * 2);
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: auto;
+    }
+  }
+
+  &__box {
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 0px solid #707070;
+    background: #fff;
+    flex: 1;
+  }
+
+  &__plan-name {
+    color: #2392db;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__plan-price {
+    margin-top: 10px;
+    font-weight: 700;
+
+    span {
+      color: #2392db;
+      font-size: 36px;
       font-weight: 700;
-      line-height: 170%; /* 27.2px */
-      letter-spacing: 3px;
+      line-height: 48px; /* 133.333% */
+      letter-spacing: 3.6px;
+      margin-right: 4px;
+      margin-left: 4px;
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 261px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+
+    th {
+      text-align: left;
+      padding-left: 12px;
+    }
+
+    td {
+      text-align: right;
+      padding-right: 12px;
+    }
+
+    th,
+    td {
+      vertical-align: middle;
+    }
+
+    tr {
+      height: 39px;
+      border-bottom: 1px solid #c2c2c2;
+    }
+  }
+
+  &__button {
+  }
+}
+
+.footer {
+  padding-top: 46px;
+  padding-bottom: 11px;
+  background: linear-gradient(90deg, #2390dc 0%, #2bc8c8 100%);
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+
+  @include breakpoints.mq(pc) {
+    padding-top: 64px;
+  }
+
+  &__inner {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include breakpoints.mq(pc) {
+      padding-left: 30px;
+      padding-right: 30px;
+      max-width: calc(1280px - (109px + 230px));
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    justify-content: center;
+
+    @include breakpoints.mq(pc) {
+      flex-direction: row;
+      gap: 87px;
+    }
+  }
+
+  &__company-info {
+    img {
+      width: 160px;
+
+      @include breakpoints.mq(pc) {
+        flex-shrink: 0;
+      }
+    }
+
+    @include breakpoints.mq(pc) {
+      text-align: left;
+    }
+  }
+
+  &__access {
+    margin-top: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: calc(20 / 14);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 16px;
+    }
+  }
+
+  &__address {
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+
+    @include breakpoints.mq(pc) {
+      flex-direction: row;
+      gap: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  &__contact {
+    @include breakpoints.mq(pc) {
+      padding-right: 25px;
+    }
+  }
+
+  &__privacy-policy {
+    @include breakpoints.mq(pc) {
+      padding-right: 25px;
+      padding-left: 25px;
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+    }
+  }
+
+  &__tokusho {
+    @include breakpoints.mq(pc) {
+      padding-left: 25px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  &__copyright {
+    margin-top: 36px;
+    padding-top: 11px;
+    small {
+      font-style: normal;
+      font-weight: 500;
+      line-height: calc(17 / 12);
     }
   }
 }
