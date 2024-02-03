@@ -26,11 +26,26 @@
           <a href="" class="header__link">運営会社</a>
         </nav>
         <button class="header__register">無料で登録</button>
-        <button class="header__open drawer-icon">
-          <img src="./img/close.svg" alt="" class="drawer-icon__bar" />
+        <button id="js-drawer-icon" class="header__open drawer-icon">
+          <span class="drawer-icon__bar"></span>
+          <span class="drawer-icon__bar"></span>
+          <span class="drawer-icon__bar"></span>
         </button>
       </div>
     </header>
+
+    <div id="js-drawer-content" class="drawer-content">
+      <div class="drawer-content__header-logo">
+        <a href=""><img src="./img/logo-white.png" alt="" /></a>
+      </div>
+      <nav class="drawer-content__menu">
+        <a href="" class="drawer-content__link">e-tigaとは</a>
+        <a href="" class="drawer-content__link">ご利用の流れ</a>
+        <a href="" class="drawer-content__link">プラン</a>
+        <a href="" class="drawer-content__link">運営会社</a>
+      </nav>
+    </div>
+
     <section class="blog">
       <div class="blog__inner inner">
         <div class="heading">
@@ -360,6 +375,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

@@ -26,13 +26,25 @@
           <a href="" class="header__link">メリット</a>
           <a href="" class="header__button button">お問い合わせ</a>
         </nav>
-        <button class="header__open drawer-icon">
+        <button id="js-drawer-icon" class="header__open drawer-icon">
           <span class="drawer-icon__bar"></span>
           <span class="drawer-icon__bar"></span>
           <span class="drawer-icon__bar"></span>
         </button>
       </div>
     </header>
+
+    <div id="js-drawer-content" class="drawer-content">
+      <nav class="drawer-content__menu">
+        <a href="" class="drawer-content__link">サービスについて</a>
+        <a href="" class="drawer-content__link">使い方</a>
+        <a href="" class="drawer-content__link">メリット</a>
+        <div class="drawer-content__button">
+          <a href="" class="button">お問い合わせ</a>
+        </div>
+      </nav>
+    </div>
+
     <div class="first-view">
       <div class="first-view__inner">
         <div class="first-view__contents">
@@ -330,7 +342,10 @@
     <div class="download-section">
       <div class="download-section__inner inner">
         <p class="download-section__text">
-          どうですか？<br class="hidden-pc" /><span class="inline-block">早速今日から使ってみたく</span><span class="inline-block">なりましたか？</span><br />てかほんと使って。お願い。
+          どうですか？<br class="hidden-pc" /><span class="inline-block"
+            >早速今日から使ってみたく</span
+          ><span class="inline-block">なりましたか？</span
+          ><br />てかほんと使って。お願い。
         </p>
         <button class="download-section__button button">
           今すぐダウンロード
@@ -387,6 +402,66 @@
         <div class="compare__attention hidden-pc">横にスクロールできます</div>
       </div>
     </div>
+
+    <section class="qa">
+      <div class="qa__inner inner">
+        <div class="qa__title">
+          <div class="heading">
+            <h2 class="heading__main">Q&A</h2>
+            <p class="heading__sub">よくあるご質問</p>
+          </div>
+        </div>
+        <div class="qa__boxes">
+          <div class="qa__box qa-box is-open">
+            <button type="submit" class="qa-box__head js-accordion">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text"
+                >僕があまりにも起きない場合、相手に怒られることはあるのでしょうか？怖くて朝も起きられません。</span
+              >
+            </button>
+            <div class="qa-box__body" style="display: block">
+              <div class="qa-box__a">
+                <span class="qa-box__a-icon">A</span>
+                <span class="qa-box__a-text">残念ながら、相手によります。</span>
+              </div>
+            </div>
+          </div>
+          <div class="qa__box qa-box">
+            <button type="submit" class="qa-box__head js-accordion">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text"
+                >今現在の登録者は何人ですか？</span
+              >
+            </button>
+            <div class="qa-box__body">
+              <div class="qa-box__a">
+                <span class="qa-box__a-icon">A</span>
+                <span class="qa-box__a-text"
+                  >現在の登録者は150万人(から149.998万人を引いた人数)です。この文を2行にしたいのでもう一度言います。現在の登録者は150万人(から149.998万人を引いた人数)です！</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="qa__box qa-box">
+            <button type="submit" class="qa-box__head js-accordion">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text"
+                >アプリをインストールして使う妄想だけで朝起きられるようになりました！結局インストールはしてないですが、ありがとうございます！</span
+              >
+            </button>
+            <div class="qa-box__body">
+              <div class="qa-box__a">
+                <span class="qa-box__a-icon">A</span>
+                <span class="qa-box__a-text"
+                  >それはよかったです！しかしインストールはしてほしかった！！！</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="contact">
       <div class="contact__inner inner">
         <div class="contact__box">
@@ -548,6 +623,7 @@
     </footer>
 
     <a href="" class="pagetop"><img src="./img/pagetop-img.png" alt="" /></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

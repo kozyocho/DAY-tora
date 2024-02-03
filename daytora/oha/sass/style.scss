@@ -165,6 +165,25 @@ body {
     width: 36px;
     height: 21px;
     position: relative;
+    z-index: 51;
+
+    &.is-checked {
+      .drawer-icon__bar {
+        &:nth-of-type(1) {
+          top: 10px;
+          transform: rotate(30deg);
+        }
+
+        &:nth-of-type(2) {
+          display: none;
+        }
+
+        &:nth-of-type(3) {
+          top: 10px;
+          transform: rotate(-30deg);
+        }
+      }
+    }
 
     &__bar {
       position: absolute;
@@ -174,6 +193,7 @@ body {
       height: 3px;
       border-radius: 6px;
       background-color: variable.$color-base;
+      transition: transform 0.3s linear, top 0.3s linear;
 
       &:nth-of-type(1) {
       }
@@ -184,6 +204,40 @@ body {
         top: 18px;
       }
     }
+  }
+}
+
+.drawer-content {
+  width: 320px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #f7ba1a;
+  z-index: 50;
+  padding: 86px 40px 40px;
+  transform: translateX(100%);
+  transition: transform 0.3s linear;
+
+  &.is-checked {
+    transform: translateX(0);
+  }
+
+  &__menu {
+  }
+
+  &__link {
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.48px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: right;
+  }
+
+  &__button {
+    margin-top: 14px;
+    text-align: right;
   }
 }
 
@@ -1175,6 +1229,172 @@ body {
 
   @include breakpoints.mq(pc) {
     display: none;
+  }
+}
+
+.qa {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include breakpoints.mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__inner {
+    @include breakpoints.mq(pc) {
+      padding-left: 30px;
+      padding-right: 30px;
+      max-width: calc(800px + 30px * 2);
+    }
+  }
+
+  &__title {
+  }
+
+  &__boxes {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 74px;
+    }
+  }
+
+  &__box {
+    border-radius: 10px;
+    border: 3px solid variable.$color-base;
+    background: #fff;
+
+    &.is-open {
+      .qa-box__head {
+        &::after {
+          transform: rotate(0);
+        }
+      }
+
+      // .qa-box__body {
+      //   display: block;
+      // }
+    }
+  }
+
+  .qa-box {
+    &__head {
+      padding: calc(32px - 3px) calc(40px - 3px) calc(20px - 3px)
+        calc(15px - 3px);
+      position: relative;
+      display: block;
+      width: 100%;
+
+      @include breakpoints.mq(pc) {
+        padding: calc(32px - 3px) calc(80px - 3px) calc(20px - 3px)
+          calc(20px - 3px);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        width: 9.26px;
+        height: 6.834px;
+        background: url(../img/qa-arrow.png) no-repeat center center / contain;
+        transform: rotate(180deg);
+        margin-top: 3px;
+
+        @include breakpoints.mq(pc) {
+          right: 19px;
+        }
+      }
+    }
+
+    &__head-icon {
+      font-family: variable.$font-family-en;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1; /* 22px */
+      display: grid;
+      place-items: center; //上下左右中央
+      width: 44px;
+      height: 44px;
+      border-radius: 22px;
+      border: 3px solid currentColor;
+      background: #f5810e;
+      position: absolute;
+      top: -26px;
+      left: 12px;
+
+      @include breakpoints.mq(pc) {
+        left: 18px;
+      }
+    }
+
+    &__head-text {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.12px;
+      text-align: left;
+
+      @include breakpoints.mq(pc) {
+        font-size: 16px;
+        line-height: 27px; /* 27.2px */
+        letter-spacing: 1.28px;
+      }
+    }
+
+    &__body {
+      padding: calc(10px + 3px) calc(17px - 3px) calc(20px - 3px)
+        calc(15px - 3px);
+      display: none;
+
+      @include breakpoints.mq(pc) {
+        padding: 3px calc(36px - 3px) calc(20px - 3px) calc(20px - 3px);
+      }
+    }
+
+    &__a {
+      display: flex;
+      gap: 8px;
+
+      @include breakpoints.mq(pc) {
+        gap: 10px;
+      }
+    }
+
+    &__a-icon {
+      font-family: variable.$font-family-en;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1; /* 22px */
+      display: grid;
+      place-items: center; //上下左右中央
+      width: 44px;
+      height: 44px;
+      border-radius: 22px;
+      border: 3px solid currentColor;
+      background: #fabe00;
+      flex-shrink: 0;
+    }
+
+    &__a-text {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.12px;
+      flex-grow: 1;
+      padding-top: 11px;
+
+      @include breakpoints.mq(pc) {
+        font-size: 16px;
+        line-height: 170%; /* 27.2px */
+        letter-spacing: 1.28px;
+        padding-top: 7px;
+      }
+    }
   }
 }
 
